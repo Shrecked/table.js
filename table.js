@@ -7,7 +7,7 @@ exports.read = function (table, rows, columns, clog) {
     return row[columns - 1].split('$$')[rows - 1];
 };
 exports.write = function (table, rows, columns, text, clog) {
-    if (rows !== Number(rows) || rows === 0 ||A columns !== Number(columns) || columns === 0 || text !== String(text) || table !== String(table)) {
+    if (rows !== Number(rows) || rows === 0 || columns !== Number(columns) || columns === 0 || text !== String(text) || table !== String(table)) {
         throw 'error: wrong input type';
     }
     if (text.replace(/\$\$/g, "-").replace(/\%\%/g, "-") !== text) {
